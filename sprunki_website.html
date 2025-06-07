@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sprunki - Creative Music Making Game | Play Free Online</title>
+    <meta name="description" content="Play Sprunki, the innovative music creation game where you mix beats, create melodies, and compose unique tracks. Free to play online with no downloads required.">
+    <meta name="keywords" content="Sprunki, music game, beat maker, sound mixing, creative game, online game, free game, music creation">
+    <link rel="canonical" href="https://collarshine.store/">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Sprunki - Creative Music Making Game">
+    <meta property="og:description" content="Create amazing music and beats in this innovative sound mixing game. Play Sprunki free online now!">
+    <meta property="og:url" content="https://collarshine.store/">
+    <meta property="og:type" content="website">
+    
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            color: #1d1d1f;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem 0;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #FF6B6B, #4ECDC4, #45B7D1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-align: center;
+            margin: 0;
+            letter-spacing: -0.02em;
+        }
+
+        .intro-section {
+            text-align: center;
+            padding: 3rem 0;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(15px);
+            margin: 2rem 0;
+            border-radius: 24px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .tagline {
+            font-size: 1.6rem;
+            color: #6e6e73;
+            font-weight: 400;
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.4;
+        }
+
+        .game-container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 24px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+            backdrop-filter: blur(20px);
+        }
+
+        .game-frame {
+            width: 100%;
+            height: 650px;
+            border: none;
+            border-radius: 16px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            font-weight: 600;
+            color: #1d1d1f;
+            margin: 3rem 0 1.5rem 0;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(135deg, #FF6B6B, #4ECDC4);
+            border-radius: 3px;
+        }
+
+        .content-section {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            padding: 2.5rem;
+            margin: 2rem 0;
+            backdrop-filter: blur(15px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #424245;
+            margin-bottom: 1.5rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2.5rem 0;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 16px;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(135deg, #FF6B6B, #4ECDC4, #45B7D1);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .feature-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #FF6B6B;
+            margin-bottom: 1rem;
+        }
+
+        .feature-description {
+            font-size: 1rem;
+            color: #515154;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        .music-icons {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .music-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #FF6B6B, #4ECDC4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .cta-section {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, #FF6B6B, #4ECDC4);
+            border-radius: 24px;
+            margin: 3rem 0;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 10px,
+                rgba(255,255,255,0.1) 10px,
+                rgba(255,255,255,0.1) 20px
+            );
+            animation: shine 3s linear infinite;
+        }
+
+        @keyframes shine {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+
+        .cta-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: white;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-subtitle {
+            font-size: 1.3rem;
+            opacity: 0.95;
+            margin-bottom: 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2.5rem 0;
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(20px);
+            margin-top: 3rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .footer-text {
+            color: #86868b;
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .tagline {
+                font-size: 1.3rem;
+                padding: 0 1rem;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+
+            .game-container {
+                padding: 1.5rem;
+            }
+
+            .game-frame {
+                height: 450px;
+            }
+
+            .content-section {
+                padding: 2rem;
+            }
+
+            .intro-section {
+                padding: 2.5rem 1.5rem;
+            }
+
+            .cta-section {
+                padding: 3rem 1.5rem;
+            }
+
+            .cta-title {
+                font-size: 2rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .feature-card {
+                padding: 1.5rem;
+            }
+
+            .music-icons {
+                gap: 1rem;
+            }
+
+            .music-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .tagline {
+                font-size: 1.2rem;
+            }
+
+            .game-frame {
+                height: 400px;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+
+            .cta-title {
+                font-size: 1.8rem;
+            }
+        }
+
+        /* Loading animation for iframe */
+        .game-loading {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .game-loading::after {
+            content: 'Loading Sprunki...';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 600;
+            z-index: 1;
+        }
+
+        .sound-wave {
+            display: inline-block;
+            width: 4px;
+            height: 20px;
+            background: linear-gradient(135deg, #FF6B6B, #4ECDC4);
+            margin: 0 2px;
+            animation: wave 1s infinite ease-in-out;
+        }
+
+        .sound-wave:nth-child(2) { animation-delay: 0.1s; }
+        .sound-wave:nth-child(3) { animation-delay: 0.2s; }
+        .sound-wave:nth-child(4) { animation-delay: 0.3s; }
+        .sound-wave:nth-child(5) { animation-delay: 0.4s; }
+
+        @keyframes wave {
+            0%, 40%, 100% { transform: scaleY(0.4); }
+            20% { transform: scaleY(1); }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <h1>Sprunki</h1>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="intro-section">
+            <p class="tagline">Create amazing beats and melodies in the ultimate music-making experience</p>
+            <div class="music-icons">
+                <div class="music-icon">♪</div>
+                <div class="music-icon">♫</div>
+                <div class="music-icon">♬</div>
+                <div class="music-icon">♭</div>
+                <div class="music-icon">♯</div>
+            </div>
+        </section>
+
+        <section class="game-container">
+            <div class="game-loading">
+                <iframe 
+                    src="https://sprunkiincredibox.org/game/sprunki-original/" 
+                    class="game-frame"
+                    title="Sprunki Music Creation Game"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>About Sprunki</h2>
+            <p>Sprunki is an innovative music creation game that transforms anyone into a composer. This captivating interactive experience allows players to mix different sounds, beats, and melodies to create unique musical compositions. Whether you're a seasoned musician or someone who simply loves music, Sprunki provides an intuitive platform for creative expression.</p>
+            
+            <p>The game features a colorful cast of characters, each representing different musical elements and sounds. By dragging and dropping these characters onto the stage, players can layer various audio tracks to build complex, harmonious compositions that reflect their personal musical style.</p>
+
+            <div style="text-align: center; margin: 2rem 0;">
+                <div class="sound-wave"></div>
+                <div class="sound-wave"></div>
+                <div class="sound-wave"></div>
+                <div class="sound-wave"></div>
+                <div class="sound-wave"></div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>Game Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3 class="feature-title">Intuitive Sound Mixing</h3>
+                    <p class="feature-description">Easily combine different beats, vocals, and effects by simply dragging characters to create your perfect track.</p>
+                </div>
+                <div class="feature-card">
+                    <h3 class="feature-title">Colorful Characters</h3>
+                    <p class="feature-description">Each character brings unique sounds and personalities, making music creation both fun and visually engaging.</p>
+                </div>
+                <div class="feature-card">
+                    <h3 class="feature-title">Creative Freedom</h3>
+                    <p class="feature-description">No musical experience required - experiment freely and discover amazing combinations that sound great together.</p>
+                </div>
+                <div class="feature-card">
+                    <h3 class="feature-title">Endless Possibilities</h3>
+                    <p class="feature-description">With numerous sound combinations available, you can create countless unique musical compositions.</p>
+                </div>
+                <div class="feature-card">
+                    <h3 class="feature-title">Share Your Creations</h3>
+                    <p class="feature-description">Record and share your musical masterpieces with friends and the Sprunki community.</p>
+                </div>
+                <div class="feature-card">
+                    <h3 class="feature-title">Regular Updates</h3>
+                    <p class="feature-description">New characters, sounds, and features are regularly added to keep the creative experience fresh and exciting.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>How to Play Sprunki</h2>
+            <p>Getting started with Sprunki is incredibly simple and intuitive. The game interface presents you with a selection of animated characters at the bottom of the screen, each representing different musical elements like beats, melodies, vocals, and sound effects.</p>
+            
+            <p>To create music, simply click and drag any character onto one of the empty slots on the main stage. Once placed, the character will start contributing their unique sound to your composition. You can layer multiple characters to build complex, rich musical arrangements that showcase your creativity.</p>
+            
+            <p>Experiment with different combinations to discover which sounds work well together. Some characters complement each other perfectly, creating harmonious melodies, while others might produce interesting contrasts that add excitement to your track. The beauty of Sprunki lies in this experimentation process.</p>
+        </section>
+
+        <section class="content-section">
+            <h2>Tips for Musical Success</h2>
+            <p>To create the most engaging compositions in Sprunki, start with a solid rhythmic foundation by placing beat-making characters first. This provides a steady backbone for your musical creation and makes it easier to add other elements harmoniously.</p>
+            
+            <p>Don't be afraid to experiment with unexpected character combinations. Sometimes the most interesting and unique sounds come from pairing characters that might seem incompatible at first. This experimentation is key to developing your own distinctive musical style within the game.</p>
+            
+            <p>Pay attention to the visual feedback from the characters as they perform. Their animations often provide clues about how their sounds interact with others, helping you make better decisions about placement and timing in your compositions.</p>
+        </section>
+
+        <section class="content-section">
+            <h2>The Magic of Music Creation</h2>
+            <p>Sprunki represents more than just a game – it's a gateway into the world of music production and creative expression. The game breaks down traditional barriers to music creation, making it accessible to players of all ages and musical backgrounds.</p>
+            
+            <p>Through its playful interface and engaging characters, Sprunki teaches fundamental concepts of music composition, rhythm, and harmony without feeling like a lesson. Players naturally learn about layering sounds, creating builds and drops, and understanding how different musical elements work together.</p>
+            
+            <p>The satisfaction of creating something uniquely yours, combined with the immediate feedback of hearing your creation come to life, makes Sprunki an incredibly rewarding experience that keeps players coming back for more musical adventures.</p>
+        </section>
+
+        <section class="cta-section">
+            <h2 class="cta-title">Start Your Musical Journey</h2>
+            <p class="cta-subtitle">Unleash your creativity and compose amazing tracks with Sprunki today!</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p class="footer-text">© 2024 Sprunki Music Game. Create, compose, and share your musical masterpieces online.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Add smooth scrolling for better UX
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add loading state management for iframe
+        const iframe = document.querySelector('.game-frame');
+        const container = document.querySelector('.game-loading');
+        
+        iframe.addEventListener('load', function() {
+            container.classList.remove('game-loading');
+        });
+
+        // Add some interactive elements for the music icons
+        document.querySelectorAll('.music-icon').forEach(icon => {
+            icon.addEventListener('mouseover', function() {
+                this.style.transform = 'scale(1.2) rotate(10deg)';
+            });
+            
+            icon.addEventListener('mouseout', function() {
+                this.style.transform = 'scale(1) rotate(0deg)';
+            });
+        });
+
+        // Add click sound effect simulation (visual feedback only)
+        document.addEventListener('click', function(e) {
+            if (e.target.classList.contains('feature-card')) {
+                e.target.style.transform = 'scale(0.98)';
+                setTimeout(() => {
+                    e.target.style.transform = '';
+                }, 150);
+            }
+        });
+    </script>
+</body>
+</html>
